@@ -2,6 +2,10 @@
 menu:
   Home: /
   Archives: /archives
+  categories: /categories
+  about: /about
+  tags: /tags
+  commonweal: /404.html
 rss: /atom.xml
 
 # Content
@@ -34,3 +38,5 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+

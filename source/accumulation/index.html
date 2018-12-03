@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>作品展示列表页</title>
+    <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+    <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="header-inner"><div class="site-brand-wrapper">
+    <div class="site-meta ">
+        <div class="custom-logo-site-title">
+            <a href="/" class="brand" rel="start" style="opacity: 1;">
+                <span class="logo-line-before"><i></i></span>
+                <span class="site-title" style="opacity: 1; top: 0px;">Denzel's Blog</span>
+                <span class="logo-line-after"><i></i></span>
+            </a>
+        </div>
+
+        <p class="site-subtitle" style="opacity: 1; top: 0px;"></p>
+
+    </div>
+
+    <div class="site-nav-toggle">
+        <button>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+        </button>
+    </div>
+</div>
+    <nav class="site-nav">
+        <ul id="menu" class="menu">
+            <li class="menu-item menu-item-home" style="opacity: 1; transform: translateY(0px);">
+                <a href="/" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-home"></i>
+                    首页
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+                <a href="/archives/" rel="section">
+
+                    <i class="menu-item-icon fa fa-fw fa-archive"></i>
+
+                    归档
+                </a>
+            </li>
+            <li class="menu-item menu-item-accumulation" style="opacity: 1; transform: translateY(0px);">
+                <a href="/accumulation" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-rocket"></i>
+                    作品展示
+                </a>
+            </li>
+            <li class="menu-item menu-item-about menu-item-active" style="opacity: 1; transform: translateY(0px);">
+                <a href="/about/" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-user"></i>
+                    关于我
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+<div class="frame-box">
+    <div class="show-block">
+        <h4><a href="./rotateBall/ball.html">canvas应用之3D旋转球体</a></h4>
+        <p><img src="./images/rotateBall.png" width="300"></p>
+    </div>
+    <div class="show-block">
+        <h4><a href="./wetherDrop/index.html">canvas应用之呼风唤雨</a></h4>
+        <p><img src="./images/weather.png" width="300"></p>
+    </div>
+    <div class="show-block">
+        <h4><a href="./bubbling/index.html">canvas应用之3D填充柱</a></h4>
+        <p><img src="./images/bubbling.png" width="300"></p>
+    </div>
+    <div class="show-block">
+        <h4><a href="./animateNav/index.html">Canvas应用之流星飞逝</a></h4>
+        <p><img src="./images/transform.png" width="300"></p>
+    </div>
+    <div class="show-block">
+        <h4><a href="./taskFlow/index.html">svg应用之流程编辑器</a></h4>
+        <p><img src="./images/flow.png" width="300"></p>
+    </div>
+    <div class="show-block">
+        <h4><a href="./listShow/index.html">可视化展示之列表滚动</a></h4>
+        <p><img src="./images/list.png" width="300"></p>
+    </div>
+    <div class="show-block">
+        <h4><a href="./EchartsRadarAutoTip/radarAutoTip.html">Radar自动轮播</a></h4>
+        <p><img src="./images/radar-tip.png" width="300"></p>
+    </div>
+    <div class="show-block"></div>
+    <div class="show-block"></div>
+<!--    <div class="show-block"></div>
+    <div class="show-block"></div>
+    <div class="show-block"></div>-->
+</div>
+<script>
+    var cos = Math.cos,fl=Math.floor,PI = 2*Math.PI,r=29*Math.PI/35;
+    var target=document.querySelectorAll('.show-block'),l=target.length;
+    target.forEach(function (t,index) {
+        r =r +PI/35;
+       var color ='rgba('+fl(cos(r)*127+128)+','+fl(cos(r+PI/3)*127+128)+','+fl(cos(r+2*PI/3)*127+128)+',.4)';
+       t.style.backgroundColor = color ;
+    });
+</script>
+</body>
+</html>

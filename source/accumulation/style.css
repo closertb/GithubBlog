@@ -1,0 +1,59 @@
+/**
+* <p>Title: 插件展示页样式列表 <／p>
+* <p>Copyright: Copyright (c) 2007<／p>
+* @author Mr Denzel
+* @version 1.0
+*/
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:rgba(214,234,233,.6) url(./back.jpg) no-repeat 0 45px;
+    text-align: center;
+}
+p,h4{
+    margin:0;
+    padding:0;
+}
+.back{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.frame-box{
+    width:1000px;
+    margin:80px auto 0;
+    box-sizing: border-box;
+    padding:10px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.show-block{
+    width:300px;
+    height:210px;
+    overflow: hidden;
+    margin-top:20px;
+    margin-left:20px;
+    background:rgba(0,0,0,.1) ;
+}
+
+.show-block a{
+    color:rgba(255,255,255,.8);
+    border-bottom:none;
+    font:normal 18px/40px 'Mircrosoft yahei';
+    transition: all .3s;
+}
+.show-block a:hover{
+    font-size:20px;
+    pointer:cursor;
+    border-bottom: 1px solid rgba(255,255,255,1);
+    color:rgba(255,255,255,1);
+}
+

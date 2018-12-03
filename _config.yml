@@ -3,19 +3,26 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Denzel's Blog
 subtitle:
-description:
-author: John Doe
-language:
+description: a blog record how to get money
+author: Denzel T
+language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: closertb.site
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:title/
 permalink_defaults:
+
+
+baidu_url_submit:
+  count: 2 # 提交最新的一个链接
+  host: www.closertb.site # 在百度站长平台中注册的域名
+  token: BnlxyBEchWdkhZUG # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
 
 # Directory
 source_dir: source
@@ -26,7 +33,10 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-
+   - 'accumulation/**'
+   - 'Klotski/**'
+   - 'resume/**'
+   - 'chart/**'
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -72,9 +82,15 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+- type: git
+  repo:
+    github: git@github.com:closertb/closertb.github.io.git,master
+    coding: git@git.coding.net:closertb/closertb.coding.me.git,master
+- type: baidu_url_submitter
+
+plugins: hexo-generator-cname

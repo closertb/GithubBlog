@@ -1,0 +1,127 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+    <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+    <link href="./commonList/index.css" rel="stylesheet" type="text/css">
+    <link href="./specialList/index.css" rel="stylesheet" type="text/css">
+    <link href="./tableList/index.css" rel="stylesheet" type="text/css">
+    <style>
+        .block-center{
+            margin-top: 105px;
+            text-align: center;
+        }
+        .module{
+
+            display: inline-block;
+        }
+        .module1,.module2,.module3 {
+            vertical-align: top;
+            display: inline-block;
+            margin: 20px;
+            width: 469px;
+            height: 310px;
+            background-color: #122e41;
+        }
+    </style>
+</head>
+<body>
+<div class="header-inner"><div class="site-brand-wrapper">
+    <div class="site-meta ">
+        <div class="custom-logo-site-title">
+            <a href="/" class="brand" rel="start" style="opacity: 1;">
+                <span class="logo-line-before"><i></i></span>
+                <span class="site-title" style="opacity: 1; top: 0px;">Denzel's Blog</span>
+                <span class="logo-line-after"><i></i></span>
+            </a>
+        </div>
+
+        <p class="site-subtitle" style="opacity: 1; top: 0px;"></p>
+
+    </div>
+
+    <div class="site-nav-toggle">
+        <button>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+        </button>
+    </div>
+</div>
+    <nav class="site-nav">
+        <ul id="menu" class="menu">
+            <li class="menu-item menu-item-home" style="opacity: 1; transform: translateY(0px);">
+                <a href="/" rel="section">
+
+                    <i class="menu-item-icon fa fa-fw fa-home"></i>
+                    首页
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+                <a href="/archives/" rel="section">
+
+                    <i class="menu-item-icon fa fa-fw fa-archive"></i>
+
+                    归档
+                </a>
+            </li>
+            <li class="menu-item menu-item-accumulation" style="opacity: 1; transform: translateY(0px);">
+                <a href="/accumulation" rel="section">
+
+                    <i class="menu-item-icon fa fa-fw fa-rocket"></i>
+
+                    作品展示
+                </a>
+            </li>
+            <li class="menu-item menu-item-about menu-item-active" style="opacity: 1; transform: translateY(0px);">
+                <a href="/about/" rel="section">
+                    <i class="menu-item-icon fa fa-fw fa-user"></i>
+                    关于我
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+<div class="block-center">
+<div class="module">
+    <div class="module1" ></div>
+    <div class="module2" ></div>
+    <div class="module3" ></div>
+</div>
+</div>
+<script src="http://filealiyun.geeker.com.cn/ued/js/jquery-1.8.3.min.js"></script>
+<script src="./commonList/index.js"></script>
+<script src="./specialList/index.js"></script>
+<script src="./tableList/index.js"></script>
+<script>
+    var data =[{name:'小狗狗1',limit:1234,percent:'100%'},
+        {name:'小狗狗2小狗狗小狗狗小狗狗',limit:2234,percent:'70%'},
+        {name:'小狗狗3',limit:3454334,percent:'15'},
+        {name:'小狗狗4',limit:3454234,percent:'50%'},
+        {name:'小狗狗5',limit:1234,percent:'30%'},
+        {name:'小狗狗2小狗狗小狗狗小狗狗',limit:2234,percent:'70%'},
+        {name:'小狗狗3',limit:3454334,percent:'15'},
+        {name:'小狗狗4',limit:3454234,percent:'50%'},
+        {name:'小狗狗5',limit:1234,percent:'30%'},
+        {name:'小狗狗2小狗狗小狗狗小狗狗',limit:2234,percent:'70%'},
+        {name:'小狗狗3',limit:3454334,percent:'15'},
+        {name:'小狗狗4',limit:3454234,percent:'50%'},
+        {name:'小狗狗5',limit:1234,percent:'30%'}];
+    var simData = {
+        unit:'万只',
+        datas:[{name: '小狗狗1', limit: 1234, percent: '100%'},
+            {name: '小狗狗2小狗狗小狗狗小狗狗', limit: 2234, percent: '80%'},
+            {name: '小狗狗3', limit: 3454334, percent: '70%'},
+            {name: '小狗狗4', limit: 3454234, percent: '60%'},
+            {name: '小狗狗5', limit: 1234, percent: '50%'},
+            {name: '小狗狗', limit: 3454334, percent: '40'},
+            {name: '小狗狗', limit: 3454234, percent: '20%'},
+            {name: '小狗狗', limit: 1234, percent: '0'}]
+    };
+    new ScrollList('.module1',data);
+    new SimpleList('.module2',simData);
+    new SpecialScrollList('.module3',data);
+</script>
+</body>
+</html>

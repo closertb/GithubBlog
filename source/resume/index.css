@@ -1,0 +1,64 @@
+/**
+* <p>Title: <／p>
+* <p>Description: <／p>
+* <p>Copyright: Copyright (c) 2007<／p>
+* <p>Company: LTGames<／p>
+* @author linrz
+* @date 
+* @version 1.0
+*/
+.recontent{color:#1889C5;padding-bottom:2rem;margin-top: 80px;line-height: normal}
+.recontent a{color:#1889C5;}
+.recontent>div{max-width:60rem;margin:0 auto;}
+.recontent .half-box{
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+.recontent .skill-radar{
+    height: 20rem;
+}
+.recontent p {line-height:1.7rem;margin-top:0;width:95%;-webkit-margin-after:1em;}
+.recontent p.content-indent{text-indent: 2em;}
+.retitle {position: relative;margin-top:1rem;height:2.5rem;}
+
+.retitle label{display: inline-block;position: relative;left:3.5rem;top:.5rem;font-size: 1.2rem;font-weight: bold;}
+.bottomline{display: inline-block;position: absolute;left:1.6rem;bottom:.3rem;;width:80%;border: 1px solid #1889C5;}
+.rediusline{display: inline-block;position: absolute;border: 2px solid #1889C5;border-radius: 50%;width: 2rem;height: 2rem;vertical-align:middle;}
+.rediusline i{padding-top:.5rem;padding-left:.2rem;}
+.rebody{margin-top: 1rem;margin-left: 1rem;}
+.rebody .delInfo{margin-left:2.2rem;width:80%;}
+.rebody h4{margin: 0 0 .4rem 2.2rem;}
+.rebody h4 span{padding-left:2rem;}
+.rebody .main-teach{
+    padding-left:2rem;
+    margin-bottom: .2rem ;
+}
+.rebody ul {margin:0 2rem;}
+.rebody li::before{content:"※";font-weight:bold;padding-right:.3rem;}
+.rebody li{list-style-type: none;padding:1px 0;}
+.rebody li a{color:#1889C5;transition:all 0.3s;border-bottom-color: transparent;}
+.rebody li a:hover{
+    cursor: pointer;
+    border-bottom-color:#1889C5;
+}
+.relist {margin-left:1.2rem;font-weight: bold;}
+.relist li{list-style-type: none;padding:2px 0;}
+.relist li span{padding-left:2rem;}
+
+@media(max-width: 767px){
+    .recontent .half-box{
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        padding:0 10px;
+    }
+    .rebody h4{margin: 0 0.2rem .4rem 0.2rem;font-size: .9rem;}
+    .rebody .main-teach{
+        padding-left:0;
+        margin-bottom: .2rem ;
+    }
+
+    .rebody .delInfo{margin-left:0.2rem;width:95%;}
+    .rebody ul {margin:0 .2rem;}
+}
