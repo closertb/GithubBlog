@@ -1,7 +1,9 @@
-## dva template
-a dva project template
+## Blog
+分享知识与生活中的点滴
 
-## 使用步骤
+## fork步骤
+0. git clone  // 下载
+
 1. npm install // 安装依赖
 
 2. npm start // 开启本地在线调试
