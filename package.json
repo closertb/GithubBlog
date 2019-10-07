@@ -6,7 +6,7 @@
     "version": "3.8.0"
   },
   "scripts": {
-    "server": "hexo server -p 4001",
+    "start": "hexo server -p 4001",
     "clean": "hexo clean",
     "pub": "hexo clean && hexo g && hexo d"
   },

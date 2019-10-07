@@ -58,6 +58,7 @@ ol, ul, li {
     font: bold 1rem/1.8rem "Microsoft Yahei";
     padding: 0 30px;
     margin: 10px 0 30px;
+    min-width: 100px;
     color: #99a4d6;
     border: 2px solid #362EC4;
     border-radius: 25px; }
@@ -67,7 +68,7 @@ ol, ul, li {
       display: inline-block;
       position: absolute;
       box-sizing: border-box;
-      WIDTH: 48px;
+      width: 48px;
       right: -70px;
       top: 0;
       padding: 0 10px;
@@ -158,7 +159,7 @@ ol, ul, li {
   background-color: #7178ff;
   margin: 0 2px 2px 0;
   font: bold 1.5rem "Microsoft Yahei";
-  transition: top .5s, left .5s ease-out;
+  transition: transform .2s ease-in-out;
   touch-action: none; }
   .widget-block li:before {
     content: '';
@@ -314,42 +315,6 @@ ol, ul, li {
         .home-page .level-items li:last-child span {
           letter-spacing: .1rem; }
 
-.picker-module {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 5; }
-  .picker-module.none {
-    display: none; }
-  .picker-module .picker-content {
-    position: relative;
-    z-index: 7;
-    background-color: white;
-    overflow: hidden; }
-  .picker-module li {
-    height: 35px;
-    line-height: 35px;
-    text-align: center; }
-  .picker-module .opacity-layer {
-    position: relative;
-    z-index: 8; }
-    .picker-module .opacity-layer li {
-      background-color: rgba(225, 225, 225, 0.6); }
-      .picker-module .opacity-layer li.curry {
-        border: 1px solid rgba(225, 225, 225, 0.7);
-        background-color: rgba(225, 225, 225, 0.2); }
-  .picker-module .select-list {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 6;
-    font-size: 1rem;
-    transition: font 0.3s, transform 0.5s ease-out;
-    color: #8b93ff; }
-    .picker-module .select-list .curry {
-      font-size: 1.2rem; }
-
 .button-bar {
   position: relative;
   z-index: 8;
@@ -384,4 +349,46 @@ ol, ul, li {
   right: 0;
   top: 0;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.68); }
+  background-color: rgba(0, 0, 0, 0); }
+
+.picker-module {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5; }
+  .picker-module.none {
+    display: none; }
+  .picker-module .picker-contents {
+    position: relative;
+    z-index: 7;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white; }
+  .picker-module .picker-content {
+    position: relative;
+    width: 100%;
+    overflow: hidden; }
+  .picker-module li {
+    height: 35px;
+    line-height: 35px;
+    text-align: center; }
+  .picker-module .opacity-layer {
+    position: relative;
+    z-index: 8; }
+    .picker-module .opacity-layer li {
+      background-color: rgba(225, 225, 225, 0.6); }
+      .picker-module .opacity-layer li.curry {
+        border: 1px solid rgba(225, 225, 225, 0.7);
+        border-left: none;
+        border-right: none;
+        background-color: rgba(225, 225, 225, 0.2); }
+  .picker-module .select-list {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+    font-size: 1.2rem;
+    transition: font 0.3s, transform 0.5s ease-out;
+    color: #8b93ff; }
+

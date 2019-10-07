@@ -8,33 +8,37 @@ tags:
     - content-Type
     - 预检请求
 ---
+写于：2017-6-29  
 ## 引子 ##
 自从从JAVA伪全栈转前端以来，学习的路上就充满了荆棘（奇葩问题），而涉及前后端分离这个问题，对cors的应用不断增多，暴露出的问题也接踵而至。
 这两天动手实践基于Token的WEB后台认证机制，看过诸多理论（[较好一篇][1]推荐），正所谓虑一千次，不如去做一次。 犹豫一万次，不如实践一次，所以就有了下文，关于token的生成，另外一篇文章会细讲，本篇主要讨论在发送ajax请求，头部带上自定义token验证验证，暴露出的跨域问题。
 ## 问题描述 ##
 话不多说，先上代码：
-
-    前端（ajax库：vue-resource）
-            userLogin:function(){
-                this.$http({
-                    method:'post',
-                    url:'http://localhost:8089/StockAnalyse/LoginServlet',
-                    params:{'flag':'ajaxlogin','loginName':this.userInfo.id,'loginPwd':this.userInfo.psd},
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    credientials:false,
-                    emulateJSON: true
-                }).then(function(response){
-                    sessionStorage.setItem('token',response.data);
-                    this.isActive =false;
-                    document.querySelector('#showInfo').classList.toggle('isLogin');
-                })
-            }
-    后端相关配置：
-    		response.setHeader('Access-Control-Allow-Origin', 'http://localhost'); //允许来之域名为http://localhost的请求
-		response.setHeader('Access-Control-Allow-Headers', 'Origin,No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With, userId, token');
-		response.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE'); //请求允许的方法
-		response.setHeader('Access-Control-Max-Age', '3600');	//身份认证(预检)后，xxS以内发送请求不在需要预检，既可以直接跳过预检，进行请求(前面只是照猫画虎，后面才理解)
-
+```javascript
+// 前端（ajax库：vue-resource）
+userLogin:function(){
+this.$http({
+    method:'post',
+    url:'http://localhost:8089/StockAnalyse/LoginServlet',
+    params:{
+        flag:'ajaxlogin',
+        loginName:this.userInfo.id,loginPwd:this.userInfo.psd
+        },
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    credientials:false,
+    emulateJSON: true
+}).then(function(response){
+    sessionStorage.setItem('token',response.data);
+    this.isActive =false;
+    document.querySelector('#showInfo').classList.toggle('isLogin');
+})
+}
+后端相关配置：
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost'); //允许来之域名为http://localhost的请求
+response.setHeader('Access-Control-Allow-Headers', 'Origin,No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With, userId, token');
+response.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE'); //请求允许的方法
+response.setHeader('Access-Control-Max-Age', '3600');	//身份认证(预检)后，xxS以内发送请求不在需要预检，既可以直接跳过预检，进行请求(前面只是照猫画虎，后面才理解)
+```
 关于上面一段代码，是我的用户首次登录认证，生成token令牌，保存在sessionStorage中，供后面调用；需要说明的是，前端服务器地址是：localhost:80,后端服务器地址：localhost:8089，所以前后端涉及到跨域，自己在后端做了相应的跨域设置：response.setHeader('Access-Control-Allow-Origin', 'http://localhost'); 所以登录认证,安全的实现了跨域信息认证，后端相应发送回来了相应的token信息。
 但获取到token后，想在需要的时候，在请求的头部携带上这个令牌，来做相应的身份认证，所以自己在请求中做了这些改动（有标注），后端没改动，源码：
 
