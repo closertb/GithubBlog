@@ -4,5 +4,4 @@ db.json
 *.log
 CNAME
 node_modules/
-public/
 .deploy*/
