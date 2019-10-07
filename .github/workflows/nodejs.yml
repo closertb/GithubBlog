@@ -18,6 +18,6 @@ jobs:
       env:
           ACCESS_TOKEN: ${{ secrets.Deploy_Access_Token }}
           BASE_BRANCH: react
-          BRANCH: master
+          BRANCH: gh-pages
           FOLDER: dist
-          BUILD_SCRIPT: npm install && npm run pub
+          BUILD_SCRIPT: npm install && npm run dev
