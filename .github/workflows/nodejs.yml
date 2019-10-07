@@ -1,25 +1,23 @@
 name: Deploy blog source to github pages
 
-on: push
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: checkout
+      uses: actions/checkout@master
+      
     - name: build and deploy
-      run: |
-        npm install
-        npm run pub
+      uses: JamesIves/github-pages-deploy-action@master
       env:
-        CI: true
+          ACCESS_TOKEN: ${{ secrets.Deploy_Access_Token }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          BUILD_SCRIPT: npm install && npm run pub
