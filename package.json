@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/closertb/closertb.github.io.git"
+    "url": "https://github.com/closertb/closertb.github.io.git"
   },
   "homepage": "https://closertb.github.io",
   "keywords": [],
