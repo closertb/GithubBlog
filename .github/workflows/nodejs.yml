@@ -1,0 +1,23 @@
+name: Deploy blog source to github pages
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+      
+    - name: build and deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+          ACCESS_TOKEN: ${{ secrets.Deploy_Access_Token }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          BUILD_SCRIPT: npm install && npm run pub
