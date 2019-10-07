@@ -3,8 +3,7 @@ name: Deploy blog source to github pages
 on: 
   push:
     branches:
-      - master
-
+      - react
 jobs:
   build:
 
@@ -12,12 +11,12 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@react
       
     - name: build and deploy
-      uses: JamesIves/github-pages-deploy-action@master
+      uses: JamesIves/github-pages-deploy-action@react
       env:
           ACCESS_TOKEN: ${{ secrets.Deploy_Access_Token }}
-          BRANCH: gh-pages
+          BRANCH: master
           FOLDER: dist
           BUILD_SCRIPT: npm install && npm run pub
