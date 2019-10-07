@@ -17,6 +17,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
           ACCESS_TOKEN: ${{ secrets.Deploy_Access_Token }}
+          BASE_BRANCH: react
           BRANCH: master
           FOLDER: dist
           BUILD_SCRIPT: npm install && npm run pub
